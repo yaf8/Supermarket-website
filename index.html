@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="styles/fontawesome6/pro/css/all.css" rel="stylesheet" />
+    <script src="styles/mdb/js/mdb.min.js"></script>
+    <link rel="stylesheet" href="styles/mdb/css/mdb.min.css">
+    <link rel="stylesheet" href="styles/bootstrap/css/bootstrap.min.css" />
+    <script src="styles/bootstrap/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <style>
+        nav {
+            background-color: #333;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        li {
+            margin: 0 10px;
+        }
+
+        a {
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #333;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu li {
+            margin: 0;
+        }
+
+        .dropdown-menu li a {
+            padding: 10px;
+        }
+
+        .form-control {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm">
+            <div class="container-fluid">
+                <a href="#" class="navbar-brand">
+                    <img src="images/logo.jpg" alt="Logo" style="width: 70px; height: 70px; margin-top: 50%;"
+                        class="rounded-circle float-start" />
+                </a>
+                <div style="display: flex; flex-direction: row; width: 100%; margin: auto; float: right">
+                    <input type="search" name="searchInput" placeholder="Search" id="search_input" class="form-control"
+                        style="width: 100%;">
+                    <button class="btn btn-primary" type="submit" style="margin-top: 20px; float: left;">
+                        <i class="fa-solid fa-search"></i>
+                    </button>
+                    </input>
+                </div>
+
+                <button class="btn btn-dark"
+                    style=" margin-left: 10px; margin-right: 10px;  margin-top: 20px; float: right;">
+                    <i class="fa-user fa-solid"></i>
+                </button>
+                <button class="btn btn-dark" style="margin-top: 20px; float: right;">
+                    <i class="fa-shopping-cart fa-solid"></i>
+                </button>
+
+    </header>
+    <nav>
+        <ul class="nav nav-tabs flex-row">
+            <li class="nav-item">
+                <a class="dropdown-toggle" ata-bs-toggle="dropdown" href="#">Home</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" style="background-color: black;" href="#">Link 1</a></li>
+                    <li><a class="dropdown-item" href="#">Link 2</a></li>
+                    <li><a class="dropdown-item" href="#">Link 3</a></li>
+                </ul>
+            </li>
+
+            <li class="nav-item"><a href="#" class="">About us</a></li>
+            <li class="nav-item"><a href="#" class="">Contact us</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Contact us</a></li>
+        </ul>
+    </nav>
+</body>
+
+</html>
