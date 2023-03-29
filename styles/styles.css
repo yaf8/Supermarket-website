@@ -94,6 +94,7 @@ a {
 .card:hover{
   border: 1.5px outset #999;
   cursor: pointer;
+  background-color: #e0e0e0;
 }
 
 .card-img-top {
