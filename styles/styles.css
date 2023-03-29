@@ -36,7 +36,7 @@ a {
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #97999c;
+  background-color: #b3b3b3;
 }
 
 .dropdown:hover .dropdown-menu {
@@ -47,6 +47,7 @@ a {
   margin: 0;
   position: relative;
   cursor: pointer;
+  font-size: small;
 }
 
 .dropdown-menu li a {
@@ -72,6 +73,7 @@ a {
 
 .dropdown-menu > li:hover > .dropdown-submenu {
   display: block;
+  transition: all .4;
 }
 
 
@@ -86,11 +88,11 @@ a {
   flex: 0 0 auto;
   width: 300px;
   margin-right: 10px;
-  transition: all .6;
+  transition: all .4;
 }
 
 .card:hover{
-  border:1.5px outset #999;
+  border: 1.5px outset #999;
   cursor: pointer;
 }
 
@@ -100,7 +102,7 @@ a {
   margin: 0 auto;
 }
 
-.top-products{
+.top-products {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
