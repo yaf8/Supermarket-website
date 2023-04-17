@@ -88,14 +88,21 @@ a {
   flex: 0 0 auto;
   width: 300px;
   margin-right: 10px;
-  transition: all .4;
+  transition: all .3;
 }
 
 .card:hover{
-  border: 1.5px outset #999;
-  cursor: pointer;
-  background-color: #e0e0e0;
+  background-color: #f7f7f7;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.35);
 }
+
+.card:active {
+  opacity: 1;
+  color: black;
+  background-color: #93b3f9;
+  transition: all;
+}
+
 
 .card-img-top {
   width: 150px;
