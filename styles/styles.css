@@ -73,9 +73,8 @@ a {
 
 .dropdown-menu > li:hover > .dropdown-submenu {
   display: block;
-  transition: all .4;
+  transition: all 0.4;
 }
-
 
 .card-scroll {
   display: flex;
@@ -88,10 +87,10 @@ a {
   flex: 0 0 auto;
   width: 300px;
   margin-right: 10px;
-  transition: all .3;
+  transition: all 0.3;
 }
 
-.card:hover{
+.card:hover {
   background-color: #f7f7f7;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.35);
 }
@@ -99,10 +98,9 @@ a {
 .card:active {
   opacity: 1;
   color: black;
-  background-color: #93b3f9;
+  background-color: #ecf2ff;
   transition: all;
 }
-
 
 .card-img-top {
   width: 150px;
@@ -160,20 +158,20 @@ footer p {
   .social-media {
     justify-content: center;
   }
-  
+
   .social-media li {
     margin-left: 5px;
   }
-  
+
   .social-media li:first-child {
     margin-left: 0;
   }
-  
+
   .social-media i {
     font-size: 18px;
   }
 
-  form{
+  form {
     max-width: 100%;
   }
 }
