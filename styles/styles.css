@@ -90,11 +90,6 @@ a {
   transition: all 0.3;
 }
 
-.card:hover {
-  background-color: #f7f7f7;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.35);
-}
-
 .card:active {
   opacity: 1;
   color: black;
