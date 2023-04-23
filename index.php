@@ -1,6 +1,6 @@
-<?php 
-  require_once 'models/product.php';
-  require_once 'database/database.php';
+<?php
+require_once 'models/Product.php';
+require_once 'database/database.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,17 +24,15 @@
 </head>
 
 <body class="bg-light" translate="transition">
-  
+
   <header>
     <nav class="navbar navbar-expand-sm">
       <div class="container-fluid">
         <a href="#" class="navbar-brand">
-          <img src="images/logo.jpg" alt="Logo" style="width: 60px; height: 60px; margin-top: 40%;"
-            class="rounded-circle float-start" />
+          <img src="images/logo.jpg" alt="Logo" style="width: 60px; height: 60px; margin-top: 40%;" class="rounded-circle float-start" />
         </a>
         <div style="display: flex; flex-direction: row; width: 100%; margin: auto; float: right">
-          <input type="search" name="searchInput" placeholder="Search" id="search_input" class="form-control"
-            style="width: 100%;">
+          <input type="search" name="searchInput" placeholder="Search" id="search_input" class="form-control" style="width: 100%;">
           <button class="btn btn-primary" type="submit" style="margin-top: 20px; float: left;">
             <i class="fa-solid fa-search"></i>
           </button>
@@ -42,11 +40,9 @@
         </div>
         <a href="signup.html">
 
-          <button class="btn btn-dark position-relative"
-            style=" margin-left: 10px; margin-right: 10px;  margin-top: 20px; float: right;">
+          <button class="btn btn-dark position-relative" style=" margin-left: 10px; margin-right: 10px;  margin-top: 20px; float: right;">
             <i class="fa-user fa-solid"></i>
-            <span
-              class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle invisible">
+            <span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle invisible">
               <span class="visually-hidden"></span>
             </span>
           </button>
@@ -54,8 +50,7 @@
         <div>
           <button class="btn btn-dark position-relative" style="margin-top: 20px; float: right;">
             <i class="fa-shopping-cart fa-solid mr-auto"></i>
-            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill badge-danger"
-              id="badge"></span>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill badge-danger" id="badge"></span>
           </button>
         </div>
   </header>
@@ -164,8 +159,7 @@
   <div id="carouselBasicExample" class="carousel slide carousel-fade" data-mdb-ride="carousel">
     <!-- Indicators -->
     <div class="carousel-indicators">
-      <button type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide-to="0" class="active"
-        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
       <button type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide-to="1" aria-label="Slide 2"></button>
       <button type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide-to="2" aria-label="Slide 3"></button>
     </div>
@@ -174,8 +168,7 @@
     <div class="carousel-inner " style="height: 30%; max-width: 80%; margin: auto; margin-top: 20px;">
       <!-- Single item -->
       <div class="carousel-item active">
-        <img src="images/vegetablesCrop.jpg" class="d-block w-100"
-          alt="Sunset Over the City" />
+        <img src="images/vegetablesCrop.jpg" class="d-block w-100" alt="Sunset Over the City" />
         <div class="carousel-caption d-none d-md-block">
           <h5>First slide label</h5>
           <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
@@ -184,8 +177,7 @@
 
       <!-- Single item -->
       <div class="carousel-item ">
-        <img src="images/vegetablesCrop.jpg" class="d-block w-100"
-        alt="Sunset Over the City" />
+        <img src="images/foodsCrop.jpg" class="d-block w-100" alt="Sunset Over the City" />
         <div class="carousel-caption d-none d-md-block">
           <h5>Second slide label</h5>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -194,8 +186,7 @@
 
       <!-- Single item -->
       <div class="carousel-item">
-        <img src="images/vegetablesCrop.jpg" class="d-block w-100"
-          alt="Cliff Above a Stormy Sea" />
+        <img src="images/vegetablesCrop.jpg" class="d-block w-100" alt="Cliff Above a Stormy Sea" />
         <div class="carousel-caption d-none d-md-block">
           <h5>Third slide label</h5>
           <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
@@ -230,11 +221,8 @@
 
 
             <!--experment test-->
-            <div class="card hover-shadow ">
-              <div class="hover-overlay">
-                <img src="images/vegetables2.jpg" class="card-img hover-overlay" alt="Product Image">
-              </div>
-              
+            <div class="card hover-shadow hover-zoom">
+              <img src="images/vegetables2.jpg" class="card-img hover-overlay" alt="Product Image">
               <div class="card-body">
                 <h5 class="card-title">Vegitables</h5>
                 <p class="card-text">This is the description of the product.</p>
@@ -247,12 +235,58 @@
 
 
 
+            <?php
+
+
+            // prepare a statement to select all products
+            $stmt = $conn->prepare('SELECT * FROM product');
+
+            // execute the statement and fetch all results into an array
+            $stmt->execute();
+            $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
+
+            // loop through the results and output the names
+            foreach ($results as $result) {
+
+
+              $product = new Product();
+              $product->setId($result['id']);
+              $product->setName($result['name']);
+              $product->setCategory($result['category']);
+              $product->setDescription($result['description']);
+              $product->setPrice($result['price']);
+              $product->setImgUri($result['img_uri']);
+
+              $card =  "
+              <div class='card hover-shadow hover-zoom'>
+              <img src='images/".$product->getImgUri()."' class='card-img hover-overlay' alt='Product Image'>
+              <div class='card-body'>
+                <h5 class='card-title'>".$product->getName()."</h5>
+                <p class='card-text'>".$product->getDescription()."</p>
+                <div class='d-flex align-items-center justify-content-between'>
+                  <p class='card-subtitle'><span class='fw-bold'>ETB</span> <span class='h5 fw-bold'>". $product->getPrice() ."</span></p>
+                  <button class='btn btn-outline-info btn-floating ripple ripple-surface-light'><i class='fa-solid fa-cart-plus m-2'></i></button>
+                </div>
+              </div>
+            </div>
+            ";
+              echo $card;
+            }
+
+            // close the connection
+            $pdo = null;
+            ?>
+
+
+
 
             <div class="card hover-zoom hover-shadow">
               <img src="images/vegetables.png" class="card-img-top" alt="Product Image">
               <div class="card-body">
                 <h5 class="card-title">Vegitables</h5>
-                <p class="card-text">This is the description of the product.</p>
+                <p class="card-text description">This is the description of the product.</p>
                 <div class="d-flex align-items-center justify-content-between">
                   <p class="card-subtitle">ETB <span class="h5 fw-bold">10.99</span></p>
                   <i class="btn btn-outline-success hover-shadow"><i class="fa-solid fa-cart-plus"></i></i>
@@ -261,7 +295,7 @@
             </div>
 
             <div class="card hover-zoom hover-shadow">
-              <img src="images/vegetables.png" class="card-img" alt="Product Image">
+              <img src="images/vegetables2.jpg" class="card-img" alt="Product Image">
               <div class="card-body">
                 <h5 class="card-title">Vegitables</h5>
                 <p class="card-text">This is the description of the product.</p>

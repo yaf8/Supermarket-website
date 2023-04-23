@@ -21,7 +21,7 @@ foreach ($results as $result) {
   $product->setImgUri($result['img_uri']);
     echo $result['name'] . '<br>';
 
-    echo $product->getDescription();
+    echo $product->getDescription() . "<br /> <br />";
 }
 
 // close the connection

@@ -92,16 +92,20 @@ a {
   transition: all 0.3;
 }
 
+.card img{
+  width: 300px;
+  height: 220px;
+}
+
 .card:active {
   opacity: 1;
   color: black;
-  background-color: #ecf2ff;
-  transition: all;
+  background-color: #f7faff;
 }
 
-.card i{
-  border-radius: 50%;
-  align-self: center;
+.description {
+  max-width: 100px;
+  max-lines: 3;
 }
 
 .card-img-top {
