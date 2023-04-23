@@ -25,7 +25,7 @@ require_once 'database/database.php';
 
 <body class="bg-light" translate="transition">
 
-  <header>
+  <header class="header">
     <nav class="navbar navbar-expand-sm">
       <div class="container-fluid">
         <a href="#" class="navbar-brand">
@@ -267,7 +267,7 @@ require_once 'database/database.php';
                 <p class='card-text'>".$product->getDescription()."</p>
                 <div class='d-flex align-items-center justify-content-between'>
                   <p class='card-subtitle'><span class='fw-bold'>ETB</span> <span class='h5 fw-bold'>". $product->getPrice() ."</span></p>
-                  <button class='btn btn-outline-info btn-floating ripple ripple-surface-light'><i class='fa-solid fa-cart-plus m-2'></i></button>
+                  <i class='btn btn-outline-success hover-shadow'><i class='fa-solid fa-cart-plus'></i></i>
                 </div>
               </div>
             </div>
@@ -323,7 +323,7 @@ require_once 'database/database.php';
               </div>
             </div>
             <div class="card">
-              <img src="images/logo.jpg" class="card-img-top" alt="Circle Image">
+              <img src="images/heineken-beer.jpeg" class="" alt="Circle Image">
               <div class="card-body">
                 <h5 class="card-title">Card Title</h5>
                 <p class="card-text">This is the details of the product</p>

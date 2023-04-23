@@ -93,14 +93,14 @@ a {
 }
 
 .card img{
-  width: 300px;
-  height: 220px;
+  max-width: 300px;
+  max-height: 220px;
 }
 
 .card:active {
   opacity: 1;
   color: black;
-  background-color: #f7faff;
+  background-color: #f4f4f4;
 }
 
 .description {
