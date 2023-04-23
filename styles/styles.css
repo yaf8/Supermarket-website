@@ -78,14 +78,16 @@ a {
 
 .card-scroll {
   display: flex;
-  overflow-x: auto;
+  overflow-x: scroll;
   scroll-behavior: smooth;
   white-space: nowrap;
+  padding: 10px;
 }
 
 .card {
   flex: 0 0 auto;
-  width: 300px;
+  max-width: 300px;
+  min-width: 280px;
   margin-right: 10px;
   transition: all 0.3;
 }
@@ -95,6 +97,11 @@ a {
   color: black;
   background-color: #ecf2ff;
   transition: all;
+}
+
+.card i{
+  border-radius: 50%;
+  align-self: center;
 }
 
 .card-img-top {

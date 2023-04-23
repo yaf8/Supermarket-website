@@ -1,3 +1,7 @@
+<?php 
+  require_once 'models/product.php';
+  require_once 'database/database.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +23,8 @@
   </style>
 </head>
 
-<body>
+<body class="bg-light" translate="transition">
+  
   <header>
     <nav class="navbar navbar-expand-sm">
       <div class="container-fluid">
@@ -169,7 +174,7 @@
     <div class="carousel-inner " style="height: 30%; max-width: 80%; margin: auto; margin-top: 20px;">
       <!-- Single item -->
       <div class="carousel-item active">
-        <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(15).webp" class="d-block w-100"
+        <img src="images/vegetablesCrop.jpg" class="d-block w-100"
           alt="Sunset Over the City" />
         <div class="carousel-caption d-none d-md-block">
           <h5>First slide label</h5>
@@ -179,8 +184,8 @@
 
       <!-- Single item -->
       <div class="carousel-item ">
-        <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(22).webp" class="d-block w-100"
-          alt="Canyon at Nigh" />
+        <img src="images/vegetablesCrop.jpg" class="d-block w-100"
+        alt="Sunset Over the City" />
         <div class="carousel-caption d-none d-md-block">
           <h5>Second slide label</h5>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -189,7 +194,7 @@
 
       <!-- Single item -->
       <div class="carousel-item">
-        <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(23).webp" class="d-block w-100"
+        <img src="images/vegetablesCrop.jpg" class="d-block w-100"
           alt="Cliff Above a Stormy Sea" />
         <div class="carousel-caption d-none d-md-block">
           <h5>Third slide label</h5>
@@ -212,16 +217,33 @@
   <!-- Carousel wrapper -->
 
 
-  <div class="container top-products">
+  <div class="container-xxl top-products">
 
-    <h3 class="fw-bold">
-      Top product <i class="fa-solid fa-arrow-right"></i>
+    <h3 class="fw-bold w-100">
+      Top product <i class="fa-solid fa-solid fa-arrow-right pl-4 pr-2"></i>
     </h3>
-
     <div class="row">
       <div class="col-16">
         <div class="card-group">
           <div class="card-scroll">
+
+
+
+            <!--experment test-->
+            <div class="card hover-shadow ">
+              <div class="hover-overlay">
+                <img src="images/vegetables2.jpg" class="card-img hover-overlay" alt="Product Image">
+              </div>
+              
+              <div class="card-body">
+                <h5 class="card-title">Vegitables</h5>
+                <p class="card-text">This is the description of the product.</p>
+                <div class="d-flex align-items-center justify-content-between">
+                  <p class="card-subtitle"><span class="fw-bold">ETB</span> <span class="h5 fw-bold">10.99</span></p>
+                  <button class="btn btn-outline-info btn-floating ripple ripple-surface-light"><i class="fa-solid fa-cart-plus m-2"></i></button>
+                </div>
+              </div>
+            </div>
 
 
 
@@ -238,8 +260,17 @@
               </div>
             </div>
 
-
-
+            <div class="card hover-zoom hover-shadow">
+              <img src="images/vegetables.png" class="card-img" alt="Product Image">
+              <div class="card-body">
+                <h5 class="card-title">Vegitables</h5>
+                <p class="card-text">This is the description of the product.</p>
+                <div class="d-flex align-items-center justify-content-between">
+                  <p class="card-subtitle">ETB <span class="h5 fw-bold">10.99</span></p>
+                  <i class="btn btn-outline-success hover-shadow"><i class="fa-solid fa-cart-plus"></i></i>
+                </div>
+              </div>
+            </div>
 
             <div class="card">
               <img src="images/vegetables.png" class="card-img-top" alt="Circle Image">
