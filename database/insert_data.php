@@ -1,58 +1,100 @@
 <?php
-  // Form validation code goes here
 
-  // Insert data into the database
-  $servername = "localhost";
-  $username = "root";
-  $password = "";
-  $dbname = "supermarket";
-
-  // Create connection
-  $conn = new mysqli($servername, $username, $password, $dbname);
-
-  // Check connection
-  if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-  }
-  else
-    echo "connected";
-
-  // Prepare the SQL statement
-  $stmt = $conn->prepare("INSERT INTO products (product_name, brand_id, category_id, subcategory_id, description, price, image_url, in_stock) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-  $stmt->bind_param("siisdsbs", $product_name, $brand_id, $category_id, $subcategory_id, $description, $price, $image_url, $in_stock);
-
-  // Set the values of the parameters and execute the statement
-  $product_name = $_POST['product_name'];
-  $brand_id = $_POST['brand_id'];
-  $category_id = $_POST['category_id'];
-  $subcategory_id = $_POST['subcategory_id'];
+  $name = $_POST['name'];
+  $category = $_POST['category'];
+  $subcategory = $_POST['subcategory'];
   $description = $_POST['description'];
   $price = $_POST['price'];
-  $image_url = isset($_POST['image_url']) ? $_POST['image_url'] : null;
-  $in_stock = isset($_POST['in_stock']) ? 1 : 0;
-  //$stmt->execute();
+  $image_url = $_FILES['image_url'];
+  $valid = false;
 
-  echo "\n\n\n\n Image Name : ". $image_url . "\n\n\n\n";
+  if (isset($name) && !empty(trim($name))) 
+  if (isset($category) && !empty(trim($category))) 
+  if (isset($subcategory) && !empty(trim($subcategory))) 
+  if (isset($description) && !empty(trim($description))) 
+  if (isset($price) && !empty(trim($price))) 
+  if (isset($image_url)) {
+      echo "<h1 style='text-align: center; color: green;'> Valid</h1>";
+      $valid = true;
+  }
+  else echo "<h1 style='text-align: center; color: red;'> image is invalid</h1>";
+  else echo "<h1 style='text-align: center; color: red;'> price is invalid</h1>";
+  else echo "<h1 style='text-align: center; color: red;'> description is invalid</h1>";
+  else echo "<h1 style='text-align: center; color: red;'> subcategory is invalid</h1>";
+  else echo "<h1 style='text-align: center; color: red;'> category is invalid</h1>";
+  else echo "<h1 style='text-align: center; color: red;'> name is invalid</h1>";
+      
 
-        $conn = mysqli_connect("localhost", "root", "", "supermarket");
+  if(false){
+
+    $filename = pathinfo($image_url['name'], PATHINFO_FILENAME);
+    $extension = pathinfo($image_url['name'], PATHINFO_EXTENSION);
+
+    $image_name = $filename . '.' . $extension;
+
+    echo "Product name : " . $name . "<br />";
+    echo "Product category : " . $category . "<br />";
+    echo "Product subcategory : " . $subcategory . "<br />";
+    echo "Product description : " . $description . "<br />";
+    echo "Product price : " . $price . "<br />";
+    echo "Product image_url : " . $image_name . "<br />";
+  }
 
 
-        if (!$conn) {
-            die("Connection failed: " . mysqli_connect_error());
-        } else {
-            echo "connected";
-        }
+  if ($valid){
 
-        $sql = "INSERT INTO products (product_name, brand_id, category_id, subcategory_id, description, price, image_url, in_stock)
-VALUES ('$product_name', '$brand_id', '$category_id', '$subcategory_id', '$description', '$price', '$image_url', '$in_stock')";
+    
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "super_market";
+    
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    // Check connection
+    if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+    }
+    
+    $sql = "INSERT INTO product (name, category, subcategory, description, price, image_uri)
+    VALUES (''John'', 'Doe', 'john@example.com')";
+    
+    if ($conn->query($sql) === TRUE) {
+      echo "New record created successfully";
+    } else {
+      echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+    
+    $conn->close();
+    
 
-        if (mysqli_query($conn, $sql)) {
-            echo "New record created successfully";
-        } else {
-            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-        }
 
-  // Close the statement and the connection
-  $stmt->close();
-  $conn->close();
+  }
+
+  
+  
+
+  /*if ($valid){echo "<h1 style='text-align: center; color: green;'> Valid</h1>";
+    $product_name = $_POST['product_name'];
+    $category_id = $_POST['category_id'];
+    $subcategory_id = $_POST['subcategory_id'];
+    $description = $_POST['description'];
+    $price = $_POST['price'];
+  }*/
+
+  /*
+
+  */
+  
+  
+  /*if (isset($_FILES['image_url'])) {
+    $file = $_FILES['image_url'];
+
+    // Extract the file name and extension
+    $filename = pathinfo($file['name'], PATHINFO_FILENAME);
+    $extension = pathinfo($file['name'], PATHINFO_EXTENSION);
+
+    // Echo the file name with extension
+    echo "Image Name with Extenion : " . $filename . '.' . $extension;
+  }*/
 ?>

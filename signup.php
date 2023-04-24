@@ -28,7 +28,7 @@
 
       @keyframes fadein {
         from {
-          opacity: 0;
+          opacity: .1;
         }
 
         to {
@@ -108,8 +108,8 @@
   </head>
 
   <body>
-    <header>
-      <nav class="navbar navbar-expand-sm">
+    <header class="header">
+      <nav class="navbar navbar-expand-sm fixed-top">
         <div class="container-fluid">
           <a href="index.php" class="navbar-brand">
             <img
@@ -122,7 +122,7 @@
         </div>
       </nav>
     </header>
-    <div class="container mb-6">
+    <div class="container mb-6 pt-5">
       <p class="h1 justify-content-center mt-5 w-100 text-center">
         Create Account
       </p>
@@ -164,7 +164,7 @@
                 required
               />
             </div>
-            <div class="mb-3">
+            <div class="mb-1">
               <input
                 type="number"
                 class="form-control"
@@ -172,7 +172,7 @@
                 required
               />
             </div>
-            <div class="row align-items-center">
+            <div class="col align-items-center">
               <div class="">
                 <label for="genderSelect" class="form-label">Gender</label>
               </div>

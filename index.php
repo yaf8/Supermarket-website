@@ -38,7 +38,7 @@ require_once 'database/database.php';
           </button>
           </input>
         </div>
-        <a href="signup.html">
+        <a href="signup.php">
 
           <button class="btn btn-dark position-relative" style=" margin-left: 10px; margin-right: 10px;  margin-top: 20px; float: right;">
             <i class="fa-user fa-solid"></i>
