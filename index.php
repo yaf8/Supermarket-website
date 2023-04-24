@@ -240,7 +240,7 @@ require_once 'database/database.php';
 
 
             // prepare a statement to select all products
-            $stmt = $conn->prepare('SELECT * FROM product');
+            $stmt = $conn->prepare('SELECT * FROM product LIMIT 10');
 
             // execute the statement and fetch all results into an array
             $stmt->execute();
