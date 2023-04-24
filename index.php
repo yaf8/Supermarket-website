@@ -169,7 +169,7 @@ require_once 'database/database.php';
     <div class="carousel-inner " style="height: 30%; max-width: 80%; margin: auto; margin-top: 20px;">
       <!-- Single item -->
       <div class="carousel-item active">
-        <img src="images/vegetablesCrop.jpg" class="d-block w-100" alt="Sunset Over the City" />
+        <img src="images/foodsCrop.jpg" class="d-block w-100" alt="Sunset Over the City" />
         <div class="carousel-caption d-none d-md-block">
           <h5>First slide label</h5>
           <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
@@ -178,33 +178,33 @@ require_once 'database/database.php';
 
       <!-- Single item -->
       <div class="carousel-item ">
-        <img src="images/foodsCrop.jpg" class="d-block w-100" alt="Sunset Over the City" />
+        <img src="images/vegetablesCrop.jpg" class="d-block w-100" alt="Sunset Over the City" />
         <div class="carousel-caption d-none d-md-block">
           <h5>Second slide label</h5>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
       </div>
 
-    <!-- Single item -->
-    <div class="carousel-item">
-      <img src="images/cosmetics-collection-4-crop.jpg" class="d-block w-100" alt="Cliff Above a Stormy Sea" />
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Forth slide label</h5>
-        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+      <!-- Single item -->
+      <div class="carousel-item">
+        <img src="images/cosmetics-collection-4-crop.jpg" class="d-block w-100" alt="Cliff Above a Stormy Sea" />
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Forth slide label</h5>
+          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+        </div>
       </div>
     </div>
-  </div>
-  <!-- Inner -->
+    <!-- Inner -->
 
-  <!-- Controls -->
-  <button class="carousel-control-prev" type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
   <!-- Carousel wrapper -->
 
