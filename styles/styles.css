@@ -81,6 +81,11 @@ a {
   transition: all 0.4;
 }
 
+.dropdown-item:hover {
+  color: black;
+  background-color: #333;
+}
+
 .card-scroll {
   display: flex;
   overflow-x: scroll;
@@ -92,14 +97,14 @@ a {
 .card {
   flex: 0 0 auto;
   max-width: 300px;
-  min-width: 280px;
+  max-width: 280px;
   margin-right: 10px;
   transition: all 0.3;
 }
 
 .card img{
-  max-width: 290px;
-  max-height: 200px;
+  max-width: 250px;
+  max-height: 220px;
 }
 
 .card:active {

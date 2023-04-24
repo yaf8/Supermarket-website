@@ -19,7 +19,10 @@ require_once 'database/database.php';
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home Page</title>
   <style>
-
+    .dropdown-item:hover {
+      color: black;
+      background-color: #333;
+    }
   </style>
 </head>
 
@@ -166,7 +169,7 @@ require_once 'database/database.php';
     </div>
 
     <!-- Inner -->
-    <div class="carousel-inner " style="height: 30%; max-width: 80%; margin: auto; margin-top: 20px;">
+    <div class="carousel-inner " style="height: 20%; max-width: 70%; margin: auto; margin-top: 20px;">
       <!-- Single item -->
       <div class="carousel-item active">
         <img src="images/foodsCrop.jpg" class="d-block w-100" alt="Sunset Over the City" />
@@ -189,7 +192,7 @@ require_once 'database/database.php';
       <div class="carousel-item">
         <img src="images/cosmetics-collection-4-crop.jpg" class="d-block w-100" alt="Cliff Above a Stormy Sea" />
         <div class="carousel-caption d-none d-md-block">
-          <h5>Forth slide label</h5>
+          <h5>Third slide label</h5>
           <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
         </div>
       </div>
@@ -280,71 +283,6 @@ require_once 'database/database.php';
             // close the connection
             $pdo = null;
             ?>
-
-
-
-
-            <div class="card hover-zoom hover-shadow">
-              <img src="images/vegetables.png" class="card-img-top" alt="Product Image">
-              <div class="card-body">
-                <h5 class="card-title">Vegitables</h5>
-                <p class="card-text description">This is the description of the product.</p>
-                <div class="d-flex align-items-center justify-content-between">
-                  <p class="card-subtitle">ETB <span class="h5 fw-bold">10.99</span></p>
-                  <i class="btn btn-outline-success hover-shadow"><i class="fa-solid fa-cart-plus"></i></i>
-                </div>
-              </div>
-            </div>
-
-            <div class="card hover-zoom hover-shadow">
-              <img src="images/vegetables2.jpg" class="card-img" alt="Product Image">
-              <div class="card-body">
-                <h5 class="card-title">Vegitables</h5>
-                <p class="card-text">This is the description of the product.</p>
-                <div class="d-flex align-items-center justify-content-between">
-                  <p class="card-subtitle">ETB <span class="h5 fw-bold">10.99</span></p>
-                  <i class="btn btn-outline-success hover-shadow"><i class="fa-solid fa-cart-plus"></i></i>
-                </div>
-              </div>
-            </div>
-
-            <div class="card">
-              <img src="images/vegetables.png" class="card-img-top" alt="Circle Image">
-              <div class="card-body">
-                <h5 class="card-title">Card Title</h5>
-                <p class="card-text">This is the details of the product</p>
-                <button class="card-img-bottom"><i class="f fa-solid fa-cart-plus"></i></button>
-              </div>
-            </div>
-
-            <div class="card">
-              <img src="images/logo.jpg" class="card-img-top" alt="Circle Image">
-              <div class="card-body">
-                <h5 class="card-title">Card Title</h5>
-                <p class="card-text">This is the details of the product</p>
-              </div>
-            </div>
-            <div class="card">
-              <img src="images/heineken-beer-12-pack.jpeg" class="" alt="Circle Image">
-              <div class="card-body">
-                <h5 class="card-title">Card Title</h5>
-                <p class="card-text">This is the details of the product</p>
-              </div>
-            </div>
-            <div class="card">
-              <img src="images/vegitables.png" class="card-img-top" alt="Circle Image">
-              <div class="card-body">
-                <h5 class="card-title">Card Title</h5>
-                <p class="card-text">This is the details of the product</p>
-              </div>
-            </div>
-            <div class="card">
-              <img src="images/vegetables.png" class="card-img-top" alt="Circle Image">
-              <div class="card-body">
-                <h5 class="card-title">Card Title</h5>
-                <p class="card-text">This is the details of the product</p>
-              </div>
-            </div>
           </div>
         </div>
       </div>

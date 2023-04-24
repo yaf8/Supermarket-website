@@ -234,12 +234,14 @@ if (isset($_POST['submit']) && $submit != null) {
                     <option value="modern">Modern</option>
                     <option value="softdrink">Soft Drink</option>
                     <option value="alcholic">Alcholic</option>
+                    <option value="laptop">Laptop</option>
                     <option value="laptop">Phone</option>
                     <option value="home">Home</option>
                     <option value="office">Office</option>
                     <option value="soap">Soap</option>
                     <option value="detergents">Detergents</option>
                     <option value="pen">Pen</option>
+                    <option value="pencil">Pencil</option>
                     <option value="men">Men</option>
                     <option value="women">Women</option>
                 </select>
@@ -257,7 +259,7 @@ if (isset($_POST['submit']) && $submit != null) {
 
             <div class="form-group">
                 <label for="image_url">Image:</label>
-                <input type="file" class="form-control-file" id="image_url" name="image_url" required>
+                <input type="file" class="form-control-file btn" id="image_url" name="image_url" required>
             </div>
 
             <button type="submit" name="submit" class="btn btn-primary w-100 mb-3 mt-2">Submit</button>
