@@ -1,3 +1,12 @@
+*{
+  box-sizing: border-box;
+  font-size: small;
+}
+
+header {
+  font-size: medium;
+}
+
 nav {
   background-color: #636363;
   height: 50px;
@@ -32,6 +41,7 @@ a {
 }
 
 .dropdown-menu {
+  font-size: smaller;
   display: none;
   position: absolute;
   top: 100%;
@@ -52,11 +62,6 @@ a {
 
 .dropdown-menu li a {
   padding: 10px;
-}
-
-.form-control {
-  margin-top: 20px;
-  text-align: center;
 }
 
 .dropdown-menu .dropdown-submenu {
@@ -93,8 +98,8 @@ a {
 }
 
 .card img{
-  max-width: 300px;
-  max-height: 220px;
+  max-width: 290px;
+  max-height: 200px;
 }
 
 .card:active {
@@ -106,12 +111,6 @@ a {
 .description {
   max-width: 100px;
   max-lines: 3;
-}
-
-.card-img-top {
-  width: 150px;
-  height: 150px;
-  margin: 0 auto;
 }
 
 .top-products {
@@ -160,6 +159,13 @@ footer p {
   color: #007bff;
 }
 
+
+
+.form-control {
+  margin-top: 20px;
+  text-align: center;
+}
+
 @media (max-width: 767px) {
   .social-media {
     justify-content: center;
@@ -181,3 +187,5 @@ footer p {
     max-width: 100%;
   }
 }
+
+

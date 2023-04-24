@@ -162,6 +162,7 @@ require_once 'database/database.php';
       <button type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
       <button type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide-to="1" aria-label="Slide 2"></button>
       <button type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide-to="3" aria-label="Slide 4"></button>
     </div>
 
     <!-- Inner -->
@@ -184,26 +185,26 @@ require_once 'database/database.php';
         </div>
       </div>
 
-      <!-- Single item -->
-      <div class="carousel-item">
-        <img src="images/vegetablesCrop.jpg" class="d-block w-100" alt="Cliff Above a Stormy Sea" />
-        <div class="carousel-caption d-none d-md-block">
-          <h5>Third slide label</h5>
-          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-        </div>
+    <!-- Single item -->
+    <div class="carousel-item">
+      <img src="images/cosmetics-collection-4-crop.jpg" class="d-block w-100" alt="Cliff Above a Stormy Sea" />
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Forth slide label</h5>
+        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
       </div>
     </div>
-    <!-- Inner -->
+  </div>
+  <!-- Inner -->
 
-    <!-- Controls -->
-    <button class="carousel-control-prev" type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
+  <!-- Controls -->
+  <button class="carousel-control-prev" type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
   </div>
   <!-- Carousel wrapper -->
 
@@ -255,18 +256,19 @@ require_once 'database/database.php';
               $product->setId($result['id']);
               $product->setName($result['name']);
               $product->setCategory($result['category']);
+              $product->setSubcategory($result['subcategory']);
               $product->setDescription($result['description']);
               $product->setPrice($result['price']);
               $product->setImgUri($result['img_uri']);
 
               $card =  "
               <div class='card hover-shadow hover-zoom'>
-              <img src='images/".$product->getImgUri()."' class='card-img hover-overlay' alt='Product Image'>
+              <img src='images/" . $product->getImgUri() . "' class='card-img hover-overlay' alt='Product Image'>
               <div class='card-body'>
-                <h5 class='card-title'>".$product->getName()."</h5>
-                <p class='card-text'>".$product->getDescription()."</p>
+                <h5 class='card-title'>" . $product->getName() . "</h5>
+                <p class='card-text'>" . $product->getDescription() . "</p>
                 <div class='d-flex align-items-center justify-content-between'>
-                  <p class='card-subtitle'><span class='fw-bold'>ETB</span> <span class='h5 fw-bold'>". $product->getPrice() ."</span></p>
+                  <p class='card-subtitle'><span class='fw-bold'>ETB</span> <span class='h5 fw-bold'>" . $product->getPrice() . "</span></p>
                   <i class='btn btn-outline-success hover-shadow'><i class='fa-solid fa-cart-plus'></i></i>
                 </div>
               </div>
@@ -323,7 +325,7 @@ require_once 'database/database.php';
               </div>
             </div>
             <div class="card">
-              <img src="images/heineken-beer.jpeg" class="" alt="Circle Image">
+              <img src="images/heineken-beer-12-pack.jpeg" class="" alt="Circle Image">
               <div class="card-body">
                 <h5 class="card-title">Card Title</h5>
                 <p class="card-text">This is the details of the product</p>

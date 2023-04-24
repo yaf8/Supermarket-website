@@ -3,6 +3,7 @@ class Product {
     private $id;
     private $name;
     private $category;
+    private $subcategory;
     private $description;
     private $price;
     private $img_uri;
@@ -28,8 +29,16 @@ class Product {
         return $this->category;
     }
 
-    public function setCategory($category) {
-        $this->category = $category;
+    public function setCategory($subcategory) {
+        $this->subcategory = $subcategory;
+    }
+
+    public function getSubcategory() {
+        return $this->category;
+    }
+
+    public function setSubcategory($subcategory) {
+        $this->subcategory = $subcategory;
     }
 
     public function getDescription() {

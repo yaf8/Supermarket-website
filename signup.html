@@ -111,7 +111,7 @@
     <header>
       <nav class="navbar navbar-expand-sm">
         <div class="container-fluid">
-          <a href="index.html" class="navbar-brand">
+          <a href="index.php" class="navbar-brand">
             <img
               src="images/logo.jpg"
               alt="Logo"
@@ -141,6 +141,7 @@
                   type="text"
                   class="form-control"
                   placeholder="First name"
+                  required
                 />
               </div>
               <div class="col">
@@ -148,17 +149,27 @@
                   type="text"
                   class="form-control"
                   placeholder="Last name"
+                  required
                 />
               </div>
             </div>
             <div class="mb-3">
-              <input type="email" class="form-control" placeholder="Email" />
+              <input type="email" class="form-control" placeholder="Email" required/>
             </div>
             <div class="mb-3">
               <input
                 type="password"
                 class="form-control"
                 placeholder="Password"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <input
+                type="number"
+                class="form-control"
+                placeholder="Phone"
+                required
               />
             </div>
             <div class="row align-items-center">
@@ -196,13 +207,13 @@
 
             <div class="md-3">
               <label for="citySelect" class="form-label">City</label>
-              <select class="form-select" id="citySelect">
+              <select class="form-select" id="citySelect" required>
                 <option value="Addis Ababa" selected>Addis Ababa</option>
               </select>
             </div>
             <div class="md-3">
               <label for="subcitySelect" class="form-label">Subcity</label>
-              <select class="form-select" id="subcitySelect">
+              <select class="form-select" id="subcitySelect" required>
                 <option value="" selected disabled>Select a subcity</option>
                 <option value="Arada">Arada</option>
                 <option value="Bole">Bole</option>
@@ -216,16 +227,17 @@
             </div>
             <div class="row">
               <div class="col">
-                <input type="text" class="form-control" placeholder="Wereda" />
+                <input type="text" class="form-control" placeholder="Wereda" required/>
               </div>
               <div class="col">
-                <input type="text" class="form-control" placeholder="Kebele" />
+                <input type="text" class="form-control" placeholder="Kebele" required/>
               </div>
               <div class="col">
                 <input
                   type="text"
                   class="form-control"
                   placeholder="House No."
+                  required
                 />
               </div>
             </div>
@@ -233,15 +245,15 @@
               <label for="paymentSelect" class="form-label"
                 >Payment method</label
               >
-              <select class="form-select" id="paymentSelect">
-                <option selected disabled>Select a payment method</option>
-                <option>Visa card</option>
-                <option>Master card</option>
-                <option>Telebirr</option>
-                <option>CBE Birr</option>
+              <select class="form-select" id="paymentSelect" required>
+                <option selected disabled value="">Select a payment method</option>
+                <option value="visa card">Visa card</option>
+                <option value="master cart">Master card</option>
+                <option value="telebirr">Telebirr</option>
+                <option value="cbe birr">CBE Birr</option>
               </select>
             </div>
-            <button type="submit" class="btn btn-outline-primary w-100 mt-2">Submit</button>
+            <button type="submit" class="btn btn-primary w-100 mt-2">Submit</button>
           </form>
         </div>
       </div>
