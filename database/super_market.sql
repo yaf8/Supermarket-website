@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 25, 2023 at 04:10 AM
+-- Generation Time: Apr 25, 2023 at 04:55 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -117,7 +117,39 @@ INSERT INTO `product` (`id`, `name`, `category`, `subcategory`, `description`, `
 (49, 'Herman boots', 'cloth', 'men', 'Herman survivor men steel work boots', 2690.50, 'herman-survivors-men-steel-toe-work-boots.jpeg'),
 (50, 'HOMCOM sofa', 'furniture', 'office', 'HOMCOM modern upholstered sofa', 11300.00, 'HOMCOM-modern-upholstered-sofa.jpeg'),
 (51, 'HP pavilion laptop', 'electronics', 'laptop', 'HP pavilion 16 RAM, 1TB ssd', 68200.00, 'hp-pavilion-laptop.jpeg'),
-(52, 'Injera', 'foods', 'cultural', 'Injera white', 18.00, 'injera.jpg');
+(52, 'Injera', 'foods', 'cultural', 'Injera white', 18.00, 'injera.jpg'),
+(53, 'Kitfo', 'foods', 'cultural', 'Kitfo 1KG', 670.00, 'kitfo.jpg'),
+(54, 'Koroneiki oil', 'foods', 'modern', 'Koroneiki olive oil 1.5 litter', 400.00, 'koroneiki-olive-oil.jpg'),
+(55, 'Kraft macaroni', 'foods', 'modern', 'Kraft macaroni 2KG', 330.00, 'kraft-macaroni.jpg'),
+(56, 'Laco sofo', 'furniture', 'home', 'Laco mid century loveseat sofa', 8800.00, 'Laco-mid-centrury-loveseat-sofa.jpeg'),
+(57, 'Lenovo laptop', 'electronics', 'laptop', 'Lenovo ideapad laptop 8GB RAM, 1TB HDD, Core i5-1000U', 41200.50, 'lenovo-ideapad-laptop.jpeg'),
+(58, 'LG phone', 'electronics', 'laptop', 'LG G8X ThinQ 128GB storage, 4GB RAM', 26000.00, 'LG-G8X-thinQ-128GB-phone.jpeg'),
+(59, 'LG phone', 'electronics', 'laptop', 'LG stylo 6 32GB storage phone', 18000.00, 'LG-stylo-6-32GB-phone.jpeg'),
+(60, 'Lifebuay soap', 'sanitary', 'soap', 'Lifebuay total handwash soap', 130.00, 'lifebuoy-total-handwash-soup.jpeg'),
+(61, 'Madden shoes', 'cloth', 'women', 'Madden NYC little girl sneakers shoes', 1450.00, 'madden-NYC-little-girl-sneakers-shoes.jpeg'),
+(62, 'Mainstay table', 'furniture', 'office', 'Mainstay 4 foot fold table', 2300.00, 'mainstay-4-foot-fold-table.jpeg'),
+(63, 'Maya coconut', 'foods', 'modern', 'Maya kamil organic cocunt 1.5KG', 530.00, 'maya-kamil-organic-coconut.jpeg'),
+(64, 'Microsoft laptop', 'electronics', 'laptop', 'Microsoft surface laptop', 78000.00, 'microsoft-surface-laptop.jpeg'),
+(65, 'Microsoft laptop', 'electronics', 'laptop', 'Microsoft surface pro 4 laptop', 80500.00, 'microsoft-surface-pro-4-laptop.jpeg'),
+(66, 'Milka chocolate', 'foods', 'modern', 'Milka chocolate', 56.00, 'milka-chocolate.jpg'),
+(67, 'Milky way chocolate', 'foods', 'modern', 'Milky way milk chocolate', 70.00, 'milky-way-milk-chocolate.jpeg'),
+(68, 'Strew hat', 'cloth', 'women', 'Mnycxen stew women hat', 440.00, 'mnycxen-strew-women-hat.jpeg'),
+(69, 'Mustrad', 'foods', 'modern', 'Ivish yellow mustrad', 330.00, 'mustard.jpg'),
+(70, 'My mochi ice cream', 'foods', 'modern', 'My mochi ice cream sweet mango pieces', 540.00, 'my-mochi-ice-cream-sweet-mango-pieces.jpeg'),
+(71, 'Nautica perfume', 'beauty', 'men', 'Nautica voyage cologne fragrance men perfume', 7489.00, 'nautica-voyage-cologne-fragrance-for-men.jpeg'),
+(72, 'Neutrogena sunscreen', 'beauty', 'women', 'Neutrogena age shield sunscreen', 2830.00, 'neutrogena-age-shield-sunscreen.jpeg'),
+(73, 'Nobel sofa', 'furniture', 'home', 'Nobel house nickolas sofa', 6300.99, 'noble-house-nickolas-sofa.jpeg'),
+(74, 'Paris age lipstick', 'beauty', 'women', 'Paris age perfect luminous lipstick', 560.00, 'paris-age-perfect-luminous-lipstick.jpeg'),
+(75, 'Pantinum alchohol', 'beverages', 'alcholic', 'Platinum distilled extra smooth vodka', 900.00, 'platinum-distilled-extra-smooth-vodka-alchohol.jpeg'),
+(76, 'Red cabbage', 'foods', 'cultural', 'Red cabbage 1KG', 45.00, 'red-cabbage.jpeg'),
+(77, 'Reebox shoes', 'cloth', 'men', 'Reebox NFX men shoes', 3800.00, 'reebox-NFX-men-shoes.jpeg'),
+(78, 'Rugged shoes', 'cloth', 'men', 'Rugged bear toddler bay sandals shoes', 789.00, 'rugged-bear-toddler-boy-sandals-shoes.jpeg'),
+(79, 'Russell husky', 'cloth', 'men', 'Russell bay round short 4 pack size husky', 432.33, 'russell-bay-round-short-4-packsize-husky.jpeg'),
+(80, 'Samsung laptop', 'electronics', 'laptop', 'Samsung galaxy book pro laptop', 53000.00, 'samsung-galaxy-book-pro-laptop.jpeg'),
+(81, 'Samsung note 20', 'electronics', 'laptop', 'Samsung galaxy note 20 5G 128GB phone', 46000.00, 'samsung-galaxy-note-20-5g-128GB-phone.jpeg'),
+(82, 'Samsung s10S', 'electronics', 'laptop', 'Samsung galaxy s10S 128GB phone', 45000.00, 'samsung-galaxy-s10E-128GB-phone.jpeg'),
+(83, 'Scarleton bag', 'cloth', 'women', 'Scarleton small crossbody women bag', 644.22, 'scarleton-small-crossbody-women-bag.jpeg'),
+(84, 'Seagram vodka', 'beverages', 'alcholic', 'Seagram extra smooth vodka', 1300.00, 'seagram-extra-smooth-vodka.jpeg');
 
 --
 -- Indexes for dumped tables
@@ -158,7 +190,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
