@@ -7,11 +7,27 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+      /* Custom CSS for header */
+      .header-wrapper {
+        background-color: #f8f9fa;
+        position: sticky;
+        top: 0;
+        z-index: 999;
+      }
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+      }
+    </style>
+  
   </head>
   <body>
     <!-- Header -->
-    <header class="bg-light p-3">
-      <div class="container d-flex justify-content-between align-items-center">
+    <div class="header-wrapper">
+      <div class="container header-container">
         <!-- Signin -->
         <div>
           <a href="#" class="btn btn-outline-secondary me-3">Sign In</a>
@@ -26,37 +42,53 @@
           <a href="#" class="btn btn-outline-secondary ms-3">Cart</a>
         </div>
       </div>
-    </header>
+    </div>
+
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container">
-        <!-- Logo -->
-        <a class="navbar-brand" href="#">Logo</a>
-        <!-- Toggle button for mobile -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <!-- Navigation links -->
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" href="#">Home</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="contactDropdown" role="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                Contact Us
-              </a>
-              <div class="dropdown-menu" aria-labelledby="contactDropdown">
-                <a class="dropdown-item" href="#">Phone</a>
-                <a class="dropdown-item" href="#">Email</a>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+<nav class="navbar navbar-expand-lg navbar-light bg-light mt-5">
+  <div class="container">
+    <!-- Logo -->
+    <a class="navbar-brand" href="#">Logo</a>
+    <!-- Toggle button for mobile -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- Navigation links -->
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="contactDropdown"
+            role="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Contact Us
+          </a>
+          <div class="dropdown-menu" aria-labelledby="contactDropdown">
+            <a class="dropdown-item" href="#">Phone</a>
+            <a class="dropdown-item" href="#">Email</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
     <!-- JavaScript and jQuery -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
       integrity="sha384-Bk0IMm/n7mbudOk17svBG/9fcFh1KjV7wRtRlNt7rQrOVkxgTofZdwt3s9f+cJ1t"
