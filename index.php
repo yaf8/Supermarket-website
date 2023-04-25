@@ -23,10 +23,29 @@ require_once 'database/database.php';
       color: black;
       background-color: #333;
     }
+
+    .nav-item:hover {
+      color: whitesmoke;
+    }
+
+    a {
+      display: block;
+      color: #f3feff;
+      text-align: center;
+      padding: 15px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    a .dropdown-item .dropdown-item {
+      padding: 5px;
+    }
   </style>
 </head>
 
 <body class="bg-light" translate="transition">
+
 
   <header class="header">
     <nav class="navbar navbar-expand-sm">
@@ -60,13 +79,17 @@ require_once 'database/database.php';
   <nav class="bg-opacity-50">
     <ul class="nav nav-tabs flex-row">
       <li class="nav-item"><a href="#" class="">Home</a></li>
-      <li class="nav-item" data-bs-toggle="dropdown">
+      <li class="navig nav-item" data-bs-toggle="dropdown">
         <div class="dropdown">
           <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
             Foods</a>
           <ul type=" none" class="dropdown-menu btn-group-sm">
-            <li class="dropdown-item">Cultural</li>
-            <li class="dropdown-item">Modern</li>
+            <a href="">
+              <li class="dropdown-item">Cultural</li>
+            </a>
+            <a href="category/food-modern.html">
+              <li class="dropdown-item">Modern</li>
+            </a>
           </ul>
         </div>
       </li>
@@ -101,6 +124,27 @@ require_once 'database/database.php';
           </ul>
         </div>
       </li>
+      </li>
+      <li class="nav-item" data-bs-toggle="dropdown">
+        <div class="dropdown">
+          <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
+            Sanitary</a>
+          <ul type=" none" class="dropdown-menu btn-group-sm">
+            <li class="dropdown-item">Soap</li>
+            <li class="dropdown-item">Detergent</li>
+          </ul>
+        </div>
+      </li>
+      <li class="nav-item" data-bs-toggle="dropdown">
+        <div class="dropdown">
+          <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
+            Stationary</a>
+          <ul type=" none" class="dropdown-menu btn-group-sm">
+            <li class="dropdown-item">Pen</li>
+            <li class="dropdown-item">Pencil</li>
+          </ul>
+        </div>
+      </li>
       <li class="nav-item" data-bs-toggle="dropdown">
         <div class="dropdown">
           <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
@@ -110,7 +154,6 @@ require_once 'database/database.php';
             <li class="dropdown-item">Women</li>
           </ul>
         </div>
-      </li>
       <li class="nav-item" data-bs-toggle="dropdown">
         <div class="dropdown">
           <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
@@ -121,37 +164,7 @@ require_once 'database/database.php';
           </ul>
         </div>
       </li>
-      <li class="nav-item" data-bs-toggle="dropdown">
-        <div class="dropdown">
-          <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
-            Cloth</a>
-          <ul class="dropdown-menu dropdown-submenu">
-            <li>
-              <a class="dropdown-item" href="#">Submenu item 1</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#">Submenu item 2</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#">Submenu item 3 &raquo; </a>
-              <ul class="dropdown-menu dropdown-submenu">
-                <li>
-                  <a class="dropdown-item" href="#">Multi level 1</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">Multi level 2</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#">Submenu item 4</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#">Submenu item 5</a>
-            </li>
-          </ul>
-        </div>
-      </li>
+
 
       <li class="nav-item"><a href="#">Contact us</a></li>
       <li class="nav-item"><a href="#">About us</a></li>
@@ -293,7 +306,6 @@ require_once 'database/database.php';
 
 
 
-
   <!-- Footer -->
   <footer class="text-center text-lg-start bg-light text-muted">
     <div class="d-flex flex-column flex-lg-row justify-content-between">
@@ -370,7 +382,6 @@ require_once 'database/database.php';
     <!-- Footer -->
   </footer>
   <!-- Footer -->
-
 
 </body>
 
