@@ -225,7 +225,7 @@ require_once 'database/database.php';
   <!-- Carousel wrapper -->
 
 
-  <div class="container-xxl top-products">
+  <div class=" justify-content-center container-fluid mt-4" style="width: 90%">
 
     <h3 class="fw-bold w-100">
       Top product <i class="fa-solid fa-solid fa-arrow-right pl-4 pr-2"></i>
