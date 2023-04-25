@@ -48,7 +48,7 @@
     <header class="header">
         <nav class="navbar navbar-expand-sm">
             <div class="container-fluid">
-                <a href="#" class="navbar-brand">
+                <a href="../index.php" class="navbar-brand">
                     <img src="../images/logo.jpg" alt="Logo" style="width: 60px; height: 60px; margin-top: 40%;"
                         class="rounded-circle float-start" />
                 </a>

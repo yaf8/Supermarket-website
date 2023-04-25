@@ -223,6 +223,7 @@
                 <option value="Lideta">Lideta</option>
                 <option value="Nifas Silk-Lafto">Nifas Silk-Lafto</option>
                 <option value="Yeka">Yeka</option>
+                <option value="Leki kura">Lemi kura</option>
               </select>
             </div>
             <div class="row">
