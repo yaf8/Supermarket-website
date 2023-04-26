@@ -20,6 +20,11 @@ if (isset($_POST['submit'])) {
     echo $alert;
   }
 
+  function hashPassword(string $password){
+    $pass_hash = password_hash($password, PASSWORD_BCRYPT);
+    return $pass_hash;
+  }
+
   $first_name = $_POST['first_name'];
   $last_name = $_POST['last_name'];
   $email = $_POST['email'];
@@ -63,6 +68,7 @@ if (isset($_POST['submit'])) {
     echo "User full name : " . $first_name . " " . $last_name . "<br />";
     echo "User email : " . $email . "<br />";
     echo "User passowrd : " . $password . "<br />";
+    echo "User passowrd hash : " . hashPassword($password) . "<br />";
     echo "User phone : " . $phone . "<br />";
     echo "User gender : " . $gender . "<br />";
     echo "User city : " . $city . "<br />";
@@ -70,6 +76,9 @@ if (isset($_POST['submit'])) {
     echo "User wereda : " . $wereda . "<br />";
     echo "User house number : " . $house_number . "<br />";
     echo "User payment : " . $payment . "<br />";
+
+    echo "<br /> <br /> Verify password hash : " . password_verify($password, hashPassword($password));
+
   }
 
 
@@ -101,7 +110,7 @@ if (isset($_POST['submit'])) {
     $conn->close();
   }
 
-  $submit = null;
+
 }
 ?>
 
