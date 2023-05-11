@@ -87,15 +87,9 @@ require_once 'database/database.php';
             <a href="">
               <li class="dropdown-item">Cultural</li>
             </a>
-<<<<<<< HEAD
             <a href="category/food-modern.php">
               <li class="dropdown-item">Modern</li>
             </a>
-=======
-            
-              <li class="dropdown-item"><a href="category/food-modern.php" class="p-0">Modern</a></li>
-            
->>>>>>> 4e3d8785d518c749a122b5e037df4f3d85c0bdc9
           </ul>
         </div>
       </li>
