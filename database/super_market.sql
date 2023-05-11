@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 11, 2023 at 01:00 AM
+-- Generation Time: May 11, 2023 at 01:09 AM
 -- Server version: 8.0.31
 -- PHP Version: 8.0.26
 
@@ -76,7 +76,7 @@ CREATE TABLE IF NOT EXISTS `product` (
   UNIQUE KEY `id` (`id`),
   KEY `id_2` (`id`),
   KEY `id_3` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=86 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=87 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `product`
@@ -161,7 +161,8 @@ INSERT INTO `product` (`id`, `name`, `category`, `subcategory`, `description`, `
 (82, 'Samsung s10S', 'electronics', 'laptop', 'Samsung galaxy s10S 128GB phone', '45000.00', 'samsung-galaxy-s10E-128GB-phone.jpeg'),
 (83, 'Scarleton bag', 'cloth', 'women', 'Scarleton small crossbody women bag', '644.22', 'scarleton-small-crossbody-women-bag.jpeg'),
 (84, 'Seagram vodka', 'beverages', 'alcholic', 'Seagram extra smooth vodka', '1300.00', 'seagram-extra-smooth-vodka.jpeg'),
-(85, 'Oreo cookies', 'foods', 'modern', 'Oreo chocolate sandwich cookies', '55.67', 'oreo-chocolate-sandwich-cookies.jpeg');
+(85, 'Oreo cookies', 'foods', 'modern', 'Oreo chocolate sandwich cookies', '55.67', 'oreo-chocolate-sandwich-cookies.jpeg'),
+(86, 'Quaker grits', 'foods', 'modern', 'Quaker instance grits value pack butter', '350.96', 'Quaker-instance-grits-value-pack-butter.jpeg');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
