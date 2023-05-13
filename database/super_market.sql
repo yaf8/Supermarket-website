@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Generation Time: May 11, 2023 at 01:09 AM
--- Server version: 8.0.31
--- PHP Version: 8.0.26
+-- Host: 127.0.0.1
+-- Generation Time: May 13, 2023 at 10:19 PM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 8.0.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -27,11 +27,9 @@ SET time_zone = "+00:00";
 -- Table structure for table `daily`
 --
 
-DROP TABLE IF EXISTS `daily`;
-CREATE TABLE IF NOT EXISTS `daily` (
-  `id` int NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `daily` (
+  `id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -39,11 +37,9 @@ CREATE TABLE IF NOT EXISTS `daily` (
 -- Table structure for table `discount`
 --
 
-DROP TABLE IF EXISTS `discount`;
-CREATE TABLE IF NOT EXISTS `discount` (
-  `id` int NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `discount` (
+  `id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -51,11 +47,9 @@ CREATE TABLE IF NOT EXISTS `discount` (
 -- Table structure for table `new_arrivals`
 --
 
-DROP TABLE IF EXISTS `new_arrivals`;
-CREATE TABLE IF NOT EXISTS `new_arrivals` (
-  `id` int NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `new_arrivals` (
+  `id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -63,20 +57,15 @@ CREATE TABLE IF NOT EXISTS `new_arrivals` (
 -- Table structure for table `product`
 --
 
-DROP TABLE IF EXISTS `product`;
-CREATE TABLE IF NOT EXISTS `product` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
-  `category` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
-  `subcategory` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
-  `description` varchar(60) COLLATE utf8mb4_general_ci NOT NULL,
+CREATE TABLE `product` (
+  `id` int(11) NOT NULL,
+  `name` varchar(30) NOT NULL,
+  `category` varchar(30) NOT NULL,
+  `subcategory` varchar(30) NOT NULL,
+  `description` varchar(60) NOT NULL,
   `price` decimal(10,2) NOT NULL,
-  `img_uri` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `id` (`id`),
-  KEY `id_2` (`id`),
-  KEY `id_3` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=87 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `img_uri` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `product`
@@ -162,7 +151,59 @@ INSERT INTO `product` (`id`, `name`, `category`, `subcategory`, `description`, `
 (83, 'Scarleton bag', 'cloth', 'women', 'Scarleton small crossbody women bag', '644.22', 'scarleton-small-crossbody-women-bag.jpeg'),
 (84, 'Seagram vodka', 'beverages', 'alcholic', 'Seagram extra smooth vodka', '1300.00', 'seagram-extra-smooth-vodka.jpeg'),
 (85, 'Oreo cookies', 'foods', 'modern', 'Oreo chocolate sandwich cookies', '55.67', 'oreo-chocolate-sandwich-cookies.jpeg'),
-(86, 'Quaker grits', 'foods', 'modern', 'Quaker instance grits value pack butter', '350.96', 'Quaker-instance-grits-value-pack-butter.jpeg');
+(86, 'Quaker grits', 'foods', 'modern', 'Quaker instance grits value pack butter', '350.96', 'Quaker-instance-grits-value-pack-butter.jpeg'),
+(87, 'Tostitos chips', 'foods', 'modern', 'Tostitos bite size tortilla round chips', '67.83', 'tostitos-bite-size-tortilla-round-chips.jpeg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `top_products`
+--
+
+CREATE TABLE `top_products` (
+  `id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `daily`
+--
+ALTER TABLE `daily`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `discount`
+--
+ALTER TABLE `discount`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `new_arrivals`
+--
+ALTER TABLE `new_arrivals`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `product`
+--
+ALTER TABLE `product`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `id` (`id`),
+  ADD KEY `id_2` (`id`),
+  ADD KEY `id_3` (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `product`
+--
+ALTER TABLE `product`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
