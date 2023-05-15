@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: May 13, 2023 at 10:19 PM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.12
+-- Host: 127.0.0.1:3306
+-- Generation Time: May 15, 2023 at 07:16 PM
+-- Server version: 8.0.31
+-- PHP Version: 8.0.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,12 +24,45 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `customer`
+--
+
+DROP TABLE IF EXISTS `customer`;
+CREATE TABLE IF NOT EXISTS `customer` (
+  `id` int NOT NULL,
+  `firstName` varchar(50) NOT NULL,
+  `lastName` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `phone` char(17) NOT NULL,
+  `gender` varchar(6) NOT NULL,
+  `city` varchar(50) NOT NULL,
+  `subcity` varchar(50) NOT NULL,
+  `woreda` int NOT NULL,
+  `house_no` varchar(25) NOT NULL,
+  `payment_method` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `customer`
+--
+
+INSERT INTO `customer` (`id`, `firstName`, `lastName`, `email`, `password`, `phone`, `gender`, `city`, `subcity`, `woreda`, `house_no`, `payment_method`) VALUES
+(1, 'Yafet', 'Feleke', 'yafetema15@gmail.com', '$2y$10$hZYPNqMjkTob.giYwseifeLN.K5tIvk/viA0fX8Dv75ren9XAiFf6', '+251929344295', 'male', 'Addis Ababa', 'Bole', 8, 'new', 'telebirr'),
+(14, 'Eyob', 'Feleke', 'eyobema18@gmail.com', '$2y$10$1X/ybFleFefjxtcZSDeJ9e1SGU6bviEMt2JzrWnvaOYf08BvmIfUO', '+251947901154', 'male', 'Addis Ababa', 'Leki kura', 3, 'new', 'cbe birr'),
+(22, 'Feven', 'Feleke', 'fevenabebe@gmail.com', '$2y$10$tKd146S45WFOQF5sQ/.KMO5ObOEaI0MS4CmopJ0kskeEIl4TIxD8q', '+251911001122', 'female', 'Addis Ababa', 'Nifas Silk-Lafto', 10, '419', 'visa card');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `daily`
 --
 
-CREATE TABLE `daily` (
-  `id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+DROP TABLE IF EXISTS `daily`;
+CREATE TABLE IF NOT EXISTS `daily` (
+  `id` int NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -37,9 +70,11 @@ CREATE TABLE `daily` (
 -- Table structure for table `discount`
 --
 
-CREATE TABLE `discount` (
-  `id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+DROP TABLE IF EXISTS `discount`;
+CREATE TABLE IF NOT EXISTS `discount` (
+  `id` int NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -47,9 +82,11 @@ CREATE TABLE `discount` (
 -- Table structure for table `new_arrivals`
 --
 
-CREATE TABLE `new_arrivals` (
-  `id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+DROP TABLE IF EXISTS `new_arrivals`;
+CREATE TABLE IF NOT EXISTS `new_arrivals` (
+  `id` int NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -57,15 +94,20 @@ CREATE TABLE `new_arrivals` (
 -- Table structure for table `product`
 --
 
-CREATE TABLE `product` (
-  `id` int(11) NOT NULL,
-  `name` varchar(30) NOT NULL,
-  `category` varchar(30) NOT NULL,
-  `subcategory` varchar(30) NOT NULL,
-  `description` varchar(60) NOT NULL,
+DROP TABLE IF EXISTS `product`;
+CREATE TABLE IF NOT EXISTS `product` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
+  `category` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
+  `subcategory` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
+  `description` varchar(60) COLLATE utf8mb4_general_ci NOT NULL,
   `price` decimal(10,2) NOT NULL,
-  `img_uri` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `img_uri` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`),
+  KEY `id_2` (`id`),
+  KEY `id_3` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=88 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `product`
@@ -119,7 +161,7 @@ INSERT INTO `product` (`id`, `name`, `category`, `subcategory`, `description`, `
 (51, 'HP pavilion laptop', 'electronics', 'laptop', 'HP pavilion 16 RAM, 1TB ssd', '68200.00', 'hp-pavilion-laptop.jpeg'),
 (52, 'Injera', 'foods', 'cultural', 'Injera white', '18.00', 'injera.jpg'),
 (53, 'Kitfo', 'foods', 'cultural', 'Kitfo 1KG', '670.00', 'kitfo.jpg'),
-(54, 'Koroneiki oil', 'foods', 'modern', 'Koroneiki olive oil 1.5 litter', '400.00', 'koroneiki-olive-oil.jpg'),
+(54, 'Koroneiki oil', 'beverages', 'alcholic', 'Koroneiki olive oil 1.5 litter', '400.00', 'koroneiki-olive-oil.jpg'),
 (55, 'Kraft macaroni', 'foods', 'modern', 'Kraft macaroni 2KG', '330.00', 'kraft-macaroni.jpg'),
 (56, 'Laco sofo', 'furniture', 'home', 'Laco mid century loveseat sofa', '8800.00', 'Laco-mid-centrury-loveseat-sofa.jpeg'),
 (57, 'Lenovo laptop', 'electronics', 'laptop', 'Lenovo ideapad laptop 8GB RAM, 1TB HDD, Core i5-1000U', '41200.50', 'lenovo-ideapad-laptop.jpeg'),
@@ -152,58 +194,7 @@ INSERT INTO `product` (`id`, `name`, `category`, `subcategory`, `description`, `
 (84, 'Seagram vodka', 'beverages', 'alcholic', 'Seagram extra smooth vodka', '1300.00', 'seagram-extra-smooth-vodka.jpeg'),
 (85, 'Oreo cookies', 'foods', 'modern', 'Oreo chocolate sandwich cookies', '55.67', 'oreo-chocolate-sandwich-cookies.jpeg'),
 (86, 'Quaker grits', 'foods', 'modern', 'Quaker instance grits value pack butter', '350.96', 'Quaker-instance-grits-value-pack-butter.jpeg'),
-(87, 'Tostitos chips', 'foods', 'modern', 'Tostitos bite size tortilla round chips', '67.83', 'tostitos-bite-size-tortilla-round-chips.jpeg');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `top_products`
---
-
-CREATE TABLE `top_products` (
-  `id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `daily`
---
-ALTER TABLE `daily`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `discount`
---
-ALTER TABLE `discount`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `new_arrivals`
---
-ALTER TABLE `new_arrivals`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `product`
---
-ALTER TABLE `product`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `id` (`id`),
-  ADD KEY `id_2` (`id`),
-  ADD KEY `id_3` (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `product`
---
-ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
+(87, 'Funyun chips', 'foods', 'modern', 'Funyun flavored onion ring chips', '130.00', 'funyun-flavored-onion-ring.jpeg');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
