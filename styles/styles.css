@@ -26,24 +26,7 @@ li {
   margin: 0 10px;
 }
 
-a {
-  display: block;
-  color: #f3feff;
-  text-align: center;
-  padding: 15px;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: bold;
-}
-a:hover {
-  display: block;
-  color: #070707;
-  text-align: center;
-  padding: 15px;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: bold;
-}
+
 
 .dropdown {
   position: relative;

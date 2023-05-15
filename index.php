@@ -28,14 +28,10 @@ require_once 'database/database.php';
       color: whitesmoke;
     }
 
-    a {
-      display: block;
-      color: #f3feff;
-      text-align: center;
-      padding: 15px;
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: bold;
+    
+
+    .dorpdown-a {
+      padding: 0px;
     }
 
     a .dropdown-item .dropdown-item {
@@ -60,8 +56,7 @@ require_once 'database/database.php';
           </button>
           </input>
         </div>
-        <a href="signup.php">
-
+        <a href="signin.php">
           <button class="btn btn-dark position-relative" style=" margin-left: 10px; margin-right: 10px;  margin-top: 20px; float: right;">
             <i class="fa-user fa-solid"></i>
             <span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle invisible">
@@ -84,12 +79,10 @@ require_once 'database/database.php';
           <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
             Foods</a>
           <ul type=" none" class="dropdown-menu btn-group-sm">
-            <a href="">
-              <li class="dropdown-item">Cultural</li>
-            </a>
-            <a href="category/food-modern.php">
-              <li class="dropdown-item">Modern</li>
-            </a>
+            
+              <a href="category/food-modern.php" class="dropdown-a" style="padding : 0px; color: white;"><li class="dropdown-item"> Cultural </li></a>
+            
+            <a href="category/food-modern.php" class="dropdown-a" style="padding : 0px; color: white;"><li class="dropdown-item"> Modern </li></a>
           </ul>
         </div>
       </li>
@@ -98,7 +91,7 @@ require_once 'database/database.php';
           <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
             Beverages</a>
           <ul type=" none" class="dropdown-menu btn-group-sm">
-            <li class="dropdown-item">Soft drink</li>
+            <a href="" class="dropdown-a" style="padding : 0px; color: white;"><li class="dropdown-item"> Soft drink  </li></a>
             <li class="dropdown-item">Alcholic</li>
           </ul>
         </div>
@@ -234,6 +227,14 @@ require_once 'database/database.php';
       <div class="col-16">
         <div class="card-group">
           <div class="card-scroll">
+
+          <!-- JavaScript and jQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+      integrity="sha384-Bk0IMm/n7mbudOk17svBG/9fcFh1KjV7wRtRlNt7rQrOVkxgTofZdwt3s9f+cJ1t"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+      integrity="sha384-Q50VUEjvFlzkx7t5OBLZzkk40V6+0wr8X5W6wIZUjD0U6m+MxO7Ucr/hZJLlZzzg"
+      crossorigin="anonymous"></script>
 
 
 

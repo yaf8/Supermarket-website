@@ -242,7 +242,6 @@
 
             <?php
 
-
             // prepare a statement to select all products
             $stmt = $conn->prepare("SELECT * FROM product WHERE category = 'foods' AND subcategory = 'modern'");
 
@@ -250,12 +249,8 @@
             $stmt->execute();
             $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-
-
             // loop through the results and output the names
             foreach ($results as $result) {
-
-
               $product = new Product();
               $product->setId($result['id']);
               $product->setName($result['name']);

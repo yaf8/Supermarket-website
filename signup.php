@@ -1,6 +1,14 @@
 <!--Handle Summit php-->
 <?php
 
+
+if (isset($_COOKIE['email'])) {
+  $loginEmail = $_COOKIE['email'];
+  echo "Cookie named '" . $loginEmail . "' is not set!";
+  header('Location: profile.php');
+  return;
+}
+
 if (isset($_POST['submit'])) {
 
 
@@ -20,7 +28,8 @@ if (isset($_POST['submit'])) {
     echo $alert;
   }
 
-  function hashPassword(string $password){
+  function hashPassword(string $password)
+  {
     $pass_hash = password_hash($password, PASSWORD_BCRYPT);
     return $pass_hash;
   }
@@ -48,7 +57,7 @@ if (isset($_POST['submit'])) {
                 if (isset($wereda) && !empty(trim($wereda)))
                   if (isset($house_number) && !empty(trim($house_number)))
                     if (isset($payment) && !empty(trim($payment))) {
-                      alert_success("valid");
+                      //alert_success("valid");
                       //header("refersh:1 url=register.html");
                       $valid = true;
                     } else alert_danger("Payment invalid");
@@ -63,7 +72,7 @@ if (isset($_POST['submit'])) {
   else alert_danger("First name invalid");
 
 
-  if ($valid) {
+  if (false) {
 
     echo "User full name : " . $first_name . " " . $last_name . "<br />";
     echo "User email : " . $email . "<br />";
@@ -78,17 +87,13 @@ if (isset($_POST['submit'])) {
     echo "User payment : " . $payment . "<br />";
 
     echo "<br /> <br /> Verify password hash : " . password_verify($password, hashPassword($password));
-
   }
-
-
-  if (false) {
-
-
+  if ($valid) {
     $servername = "localhost";
     $username = "root";
     $password = "";
     $dbname = "super_market";
+
 
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
@@ -97,20 +102,25 @@ if (isset($_POST['submit'])) {
       die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "INSERT INTO product (name, category, subcategory, description, price, img_uri)
-    VALUES ('$name', '$category', '$subcategory', '$description', '$price', '$image_name')";
+
+    $sql = "INSERT INTO customer (firstName, lastName, email, password, phone, gender, city, subcity, woreda, house_no, payment_method)
+    VALUES ('$first_name', '$last_name', '$email', '" . hashPassword($password) . "', '$phone' , '$gender', '$city', '$subcity', '$wereda', '$house_number', '$payment')";
 
     if ($conn->query($sql) === TRUE) {
-      echo alert_success("<strong>$name</strong>" . " inserted successfully");
+
+      $cookie_name = "email";
+      $cookie_value = $email;
+      setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
+
+      alert_success("<div class='h1 justify-content-center z-index-md-3 w-100 text-center''>Signup Success</div>");
+      header("Refresh: 2; URL=./");
     } else {
       $error_mess = "Error: " . $sql . "<br>" . $conn->error;
-      alert_danger($error_mess);
+      alert_danger("<div>Failed to signup</div>");
     }
 
     $conn->close();
   }
-
-
 }
 ?>
 
@@ -225,7 +235,7 @@ if (isset($_POST['submit'])) {
 
 <body>
   <header class="header">
-    <nav class="navbar navbar-expand-sm fixed-top">
+    <nav class="navbar navbar-expand-sm">
       <div class="container-fluid">
         <a href="index.php" class="navbar-brand">
           <img src="images/logo.jpg" alt="Logo" style="width: 60px; height: 60px; margin-top: 40%" class="rounded-circle float-start" />
@@ -233,6 +243,9 @@ if (isset($_POST['submit'])) {
       </div>
     </nav>
   </header>
+
+
+
   <div class="container mb-6 pt-5">
     <p class="h1 justify-content-center mt-5 w-100 text-center">
       Create Account
@@ -317,6 +330,9 @@ if (isset($_POST['submit'])) {
             </select>
           </div>
           <button type="submit" name="submit" class="btn btn-primary hover-shadow w-100 mt-2">Submit</button>
+          <div class="h3 mt-4" style="margin:auto; text-align:center;">
+            <p>Already have an account? <strong><a href="signin.php" style="padding: 0; margin:0; color:#0062cc;">Sing in</a></strong></p>
+          </div>
         </form>
       </div>
     </div>
