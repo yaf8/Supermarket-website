@@ -248,11 +248,11 @@ if (isset($_POST['submit'])) {
         </nav>
     </header>
 
-    <div class="container mb-6 pt-5">
-        <p class="h1 justify-content-center mt-5 w-100 text-center">
+    <div class="container mb-6 pt-2">
+        <p class="h1 justify-content-center mt-3 w-100 text-center">
             Sign in
         </p>
-        <div class="row justify-content-center mt-6">
+        <div class="row justify-content-center mt-0 ">
             <div class="col-10">
                 <form id="form" class="needs-validation" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data" onsubmit="return checkValidity()">
                     <div class="center-container">

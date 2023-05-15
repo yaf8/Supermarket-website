@@ -107,9 +107,8 @@ if (isset($_GET['action']) && $_GET['action'] === 'signout') {
                 </a>
             </div>
             <div>
-                <a href="profile.php?action=signout"><button class="btn btn-dark position-relative" style="margin-top: 20px; float: right;">
+                <a href="profile.php?action=signout"><button class="btn btn-danger position-relative" style="margin-top: 20px; float: right;">
                         <i class="fa-regular fa-right-from-bracket"> <strong> Signout </strong></i>
-                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill badge-danger" id="badge"></span>
                     </button></a>
             </div>
         </nav>
