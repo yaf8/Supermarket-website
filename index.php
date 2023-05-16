@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once 'models/Product.php';
 require_once 'database/database.php';
 ?>
@@ -28,7 +29,7 @@ require_once 'database/database.php';
       color: whitesmoke;
     }
 
-    
+
 
     .dorpdown-a {
       padding: 0px;
@@ -79,10 +80,14 @@ require_once 'database/database.php';
           <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
             Foods</a>
           <ul type=" none" class="dropdown-menu btn-group-sm">
-            
-              <a href="category/food-modern.php" class="dropdown-a" style="padding : 0px; color: white;"><li class="dropdown-item"> Cultural </li></a>
-            
-            <a href="category/food-modern.php" class="dropdown-a" style="padding : 0px; color: white;"><li class="dropdown-item"> Modern </li></a>
+
+            <a href="category/food-modern.php" class="dropdown-a" style="padding : 0px; color: white;">
+              <li class="dropdown-item"> Cultural </li>
+            </a>
+
+            <a href="category/food-modern.php" class="dropdown-a" style="padding : 0px; color: white;">
+              <li class="dropdown-item"> Modern </li>
+            </a>
           </ul>
         </div>
       </li>
@@ -91,7 +96,9 @@ require_once 'database/database.php';
           <a class="dropdown-toggle" data-bs-toggle="dropdown" href="#">
             Beverages</a>
           <ul type=" none" class="dropdown-menu btn-group-sm">
-            <a href="" class="dropdown-a" style="padding : 0px; color: white;"><li class="dropdown-item"> Soft drink  </li></a>
+            <a href="" class="dropdown-a" style="padding : 0px; color: white;">
+              <li class="dropdown-item"> Soft drink </li>
+            </a>
             <li class="dropdown-item">Alcholic</li>
           </ul>
         </div>
@@ -228,14 +235,9 @@ require_once 'database/database.php';
         <div class="card-group">
           <div class="card-scroll">
 
-          <!-- JavaScript and jQuery -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
-      integrity="sha384-Bk0IMm/n7mbudOk17svBG/9fcFh1KjV7wRtRlNt7rQrOVkxgTofZdwt3s9f+cJ1t"
-      crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
-      integrity="sha384-Q50VUEjvFlzkx7t5OBLZzkk40V6+0wr8X5W6wIZUjD0U6m+MxO7Ucr/hZJLlZzzg"
-      crossorigin="anonymous"></script>
-
+            <!-- JavaScript and jQuery -->
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-Bk0IMm/n7mbudOk17svBG/9fcFh1KjV7wRtRlNt7rQrOVkxgTofZdwt3s9f+cJ1t" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-Q50VUEjvFlzkx7t5OBLZzkk40V6+0wr8X5W6wIZUjD0U6m+MxO7Ucr/hZJLlZzzg" crossorigin="anonymous"></script>
 
 
             <!--experment test-->
@@ -263,12 +265,21 @@ require_once 'database/database.php';
             $stmt->execute();
             $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+            // initialize the cart variable
+            if (!isset($_SESSION['cart'])) {
+              $_SESSION['cart'] = array();
+            }
 
+            // check if form is submitted
+            if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['product_id'])) {
+              // add the product to the cart
+              $productId = $_POST['product_id'];
+              $_SESSION['cart'][] = $productId;
+            }
 
-            // loop through the results and output the names
+            // loop through the results and output the products from mysql
             foreach ($results as $result) {
-
-
+              // create the product object
               $product = new Product();
               $product->setId($result['id']);
               $product->setName($result['name']);
@@ -279,24 +290,80 @@ require_once 'database/database.php';
               $product->setImgUri($result['img_uri']);
 
               $card =  "
-              <div class='card hover-shadow hover-zoom'>
-              <img src='images/" . $product->getImgUri() . "' class='card-img hover-overlay' alt='Product Image'>
-              <div class='card-body'>
-                <h5 class='card-title'>" . $product->getName() . "</h5>
-                <p class='card-text'>" . $product->getDescription() . "</p>
-                <div class='d-flex align-items-center justify-content-between'>
-                  <p class='card-subtitle'><span class='fw-bold'>ETB</span> <span class='h5 fw-bold'>" . $product->getPrice() . "</span></p>
-                  <i class='btn btn-outline-success hover-shadow'><i class='fa-solid fa-cart-plus'></i></i>
-                </div>
-              </div>
-            </div>
-            ";
+                    <div class='card hover-shadow hover-zoom'>
+                      <img src='images/" . $product->getImgUri() . "' class='card-img hover-overlay' alt='Product Image'>
+                      <div class='card-body'>
+                        <h5 class='card-title'>" . $product->getName() . "</h5>
+                        <p class='card-text'>" . $product->getDescription() . "</p>
+                        <div class='d-flex align-items-center justify-content-between'>
+                          <p class='card-subtitle'><span class='fw-bold'>ETB</span> <span class='h5 fw-bold'>" . $product->getPrice() . "</span></p>
+                          <form method='post' action='" . $_SERVER['PHP_SELF'] . "'>
+                            <input type='hidden' name='product_id' value='" . $product->getId() . "'>
+                            <button type='submit' onclick='incBadge()' class='btn btn-outline-success hover-shadow'><i class='fa-solid fa-cart-plus'></i></button>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  ";
+
+
+              
+
               echo $card;
             }
+            
+            
+            // initialize the cart variable
+              if (!isset($_SESSION['cart'])) {
+                $_SESSION['cart'] = array();
+              }
+
+              // check if the form is submitted
+              if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                // get the product ID from the form
+                $productId = $_POST['product_id'];
+
+                // add the product to the cart session variable
+                $_SESSION['cart'][] = $productId;
+
+                // return the cart count as the response
+                echo count($_SESSION['cart']);
+                return;
+              }
+
+
 
             // close the connection
             $pdo = null;
             ?>
+          
+
+            <script>
+
+              var badgeInc = 0;
+              function incBadge(){
+                badgeInc++;
+                document.getElementById("badge").innerHTML = badgeInc;
+              }
+
+
+              function addToCart(productId) {
+                // Send an AJAX request to add the product to the cart
+                $.ajax({
+                  type: "POST",
+                  url: "cart.php",
+                  data: {
+                    product_id: productId
+                  },
+                  success: function(response) {
+                    // Update the cart badge with the new cart count
+                    $("#badge").text(response);
+                    console.log(response);
+                  }
+                });
+              }
+            </script>
+
           </div>
         </div>
       </div>

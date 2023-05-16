@@ -113,7 +113,7 @@ if (isset($_POST['submit'])) {
       setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
 
       alert_success("<div class='h1 justify-content-center z-index-md-3 w-100 text-center''>Signup Success</div>");
-      header("Refresh: 2; URL=./");
+      header("Refresh: 2; URL=profile.php");
     } else {
       $error_mess = "Error: " . $sql . "<br>" . $conn->error;
       alert_danger("<div>Failed to signup</div>");
@@ -331,7 +331,7 @@ if (isset($_POST['submit'])) {
           </div>
           <button type="submit" name="submit" class="btn btn-primary hover-shadow w-100 mt-2">Submit</button>
           <div class="h3 mt-4" style="margin:auto; text-align:center;">
-            <p>Already have an account? <strong><a href="signin.php" style="padding: 0; margin:0; color:#0062cc;">Sing in</a></strong></p>
+            <p>Already have an account? <strong><a href="signin.php" style="padding: 0; margin:0; color:#0062cc;">Sign in</a></strong></p>
           </div>
         </form>
       </div>

@@ -83,7 +83,7 @@ if (isset($_POST['submit'])) {
             if ($verifyedPassword) {
 
                 alert_success("<div class='h1 justify-content-center z-index-md-3 w-100 text-center''>Signin Success</div>");
-                header("Refresh: 2; URL=./");
+                header("Refresh: 2; URL=profile.php");
 
                 $cookie_name = "email";
                 $cookie_value = $email;
